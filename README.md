@@ -32,29 +32,22 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 ### **3. Activity Diagram**
 
 ---
-![MCC-69 Kelompok 2 Segmen 4-Diagram Activity drawio](https://user-images.githubusercontent.com/28643606/196129671-4050a7a4-bdb9-4558-8444-284a7b67c903.png)
 
-
----
-
-<br>
-
-    
-- **Login**
+**Login**
 ---
 
 ![MCC-69 Kelompok 2 Segmen 4-DA - Login drawio](https://user-images.githubusercontent.com/28643606/196129779-3e582c82-9df3-4376-b65d-32e1830fab15.png)
 
 ---
 
-- **Profile**
+**Profile**
 ---
 
 ![MCC-69 Kelompok 2 Segmen 4-DA - Profile drawio](https://user-images.githubusercontent.com/28643606/196129913-3cd373a6-c2a9-4149-b5ff-c811a813ce03.png)
 ---
 
 
-- **Add KPI**
+**Add KPI**
 ---
 
 ![MCC-69 Kelompok 2 Segmen 4-DA - Add KPI drawio](https://user-images.githubusercontent.com/28643606/196130109-5a5df8c1-88b9-4925-baeb-b672fd2db474.png)
@@ -62,13 +55,13 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 ---
 
 
-- **Edit KPI**
+**Edit KPI**
 ---
 
 ![MCC-69 Kelompok 2 Segmen 4-DA - Edit KPI drawio](https://user-images.githubusercontent.com/28643606/196130211-c5025f30-648e-45f0-8bf6-e79ce751e44c.png)
 ---
 
-- **Delete KPI (Modul)**
+**Delete KPI**
 
 ---
 
@@ -76,7 +69,7 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 
 ---
 
-- **Submit Assesment KPI (Employee)**
+**Submit Assesment KPI (Employee)**
 ---
 
 ![MCC-69 Kelompok 2 Segmen 4-DA - Profile drawio](https://user-images.githubusercontent.com/28643606/196130778-d8694dfb-f0b7-4943-89f4-a2df5224efd2.png)
