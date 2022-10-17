@@ -13,7 +13,8 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 
 ---
 
-![BPMN](/src/main/resources/static/img/readme/bpmn.png "BPMN")
+![MCC-69 Kelompok 2 Segmen 4-BPMN drawio](https://user-images.githubusercontent.com/28643606/196128498-69a5c1da-6577-4583-8724-d0897e75bcb3.png)
+
 
 ---
 
@@ -23,7 +24,7 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 
 ---
 
-![Use Case](/src/main/resources/static/img/readme/usecase.png "Use Case")
+![MCC-69 Kelompok 2 Segmen 4-Use Case drawio](https://user-images.githubusercontent.com/28643606/196128853-d9d041a9-7782-40bb-a5a2-f396813d3de9.png)
 
 ---
 
