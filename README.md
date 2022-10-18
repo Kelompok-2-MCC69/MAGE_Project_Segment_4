@@ -64,7 +64,7 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 **Submit Assesment**
 ---
 
-![MCC-69 Kelompok 2 Segmen 4-DA-Submit Assesment drawio](https://user-images.githubusercontent.com/80909763/196313295-654a8e56-1553-4d5a-a5e3-df0b2f07a2e6.png)
+![MCC-69 Kelompok 2 Segmen 4-DA-Submit Assesment drawio](https://user-images.githubusercontent.com/80909763/196313787-849f5316-f54b-4a43-a666-5ac2a79ea87a.png)
 
 ---
 
