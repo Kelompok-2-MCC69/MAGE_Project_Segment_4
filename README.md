@@ -80,7 +80,6 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 
 ---
 
-https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&page-id=RuMdRzjv92PE9wJGhszQ&title=MCC-69%20Kelompok%202%20Segmen%204#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1IjwA-9J1P_sespO4uRXMg1d3ft5PbY_S%26export%3Ddownload
 
 ---
 
