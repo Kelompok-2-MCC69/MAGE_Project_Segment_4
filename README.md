@@ -92,5 +92,6 @@ https://www.figma.com/file/4Tyia91rVeG9biaSfarGqO/MAGE-(METRODATA-MANAGEMENT-EMP
 
 ### **4. ERD (Entity–relationship model)**
 
+![MCC-69 Kelompok 2 Segmen 4-ERD - MAGE drawio](https://user-images.githubusercontent.com/80909763/196376178-d8d1a448-a09a-463b-9374-1bd94d4b77d2.png)
 
 <br>
