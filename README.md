@@ -7,6 +7,37 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 - [Alexander Ramadhan Suratinoyo](https://github.com/alexanderamadhan)
 - [Arie Asngari Ade Putra](https://github.com/arieasngariadep)
 
+### **Link Desain**
+
+---
+
+https://drive.google.com/file/d/1IjwA-9J1P_sespO4uRXMg1d3ft5PbY_S/view?usp=sharing
+
+---
+
+<br>
+
+### **5. DATA DUMMY**
+
+---
+
+https://docs.google.com/spreadsheets/d/19eSM3yCE6MOFqctDkuiC_cykwE-U7gO2zV-k1KsBhFE/edit?usp=sharing
+
+---
+
+<br>
+
+### **5. MOCKUP**
+
+---
+
+https://www.figma.com/file/4Tyia91rVeG9biaSfarGqO/MAGE-(METRODATA-MANAGEMENT-EMPLOYEE)?node-id=0%3A1
+
+---
+
+<br>
+
+
 ## **Our Design Concept for Preparation Create App:**
 
 ### **1. BPMN (Business Process Model and Notation)**
@@ -78,30 +109,5 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 
 ### **4. ERD (Entity–relationship model)**
 
----
-
-https://drive.google.com/file/d/1IjwA-9J1P_sespO4uRXMg1d3ft5PbY_S/view?usp=sharing
-
----
-
-<br>
-
-### **5. DATA DUMMY**
-
----
-
-https://docs.google.com/spreadsheets/d/19eSM3yCE6MOFqctDkuiC_cykwE-U7gO2zV-k1KsBhFE/edit?usp=sharing
-
----
-
-<br>
-
-### **5. MOCKUP**
-
----
-
-https://www.figma.com/file/4Tyia91rVeG9biaSfarGqO/MAGE-(METRODATA-MANAGEMENT-EMPLOYEE)?node-id=0%3A1
-
----
 
 <br>
