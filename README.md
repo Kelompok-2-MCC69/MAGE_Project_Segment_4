@@ -40,39 +40,39 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 
 ---
 
-**Profile**
+**Edit Profile**
+---
+![MCC-69 Kelompok 2 Segmen 4-DA - Edit Profile drawio](https://user-images.githubusercontent.com/80909763/196312807-eba46d1a-83e9-4776-ae88-52f0aee3c8ca.png)
+
 ---
 
-![MCC-69 Kelompok 2 Segmen 4-DA - Profile drawio](https://user-images.githubusercontent.com/28643606/196129913-3cd373a6-c2a9-4149-b5ff-c811a813ce03.png)
+**Edit Account**
+---
+![MCC-69 Kelompok 2 Segmen 4-DA - Edit Account drawio](https://user-images.githubusercontent.com/80909763/196312990-7c38f5dc-ca96-426b-a72d-88cc0e145802.png)
+
 ---
 
 
 **Add KPI**
 ---
 
-![MCC-69 Kelompok 2 Segmen 4-DA - Add KPI drawio](https://user-images.githubusercontent.com/28643606/196130109-5a5df8c1-88b9-4925-baeb-b672fd2db474.png)
+![MCC-69 Kelompok 2 Segmen 4-DA - Add New KPI drawio](https://user-images.githubusercontent.com/80909763/196313090-70a03e4a-7058-459c-9b45-147147d9ff1a.png)
 
 ---
 
 
-**Edit KPI**
+**Submit Assesment**
 ---
 
-![MCC-69 Kelompok 2 Segmen 4-DA - Edit KPI drawio](https://user-images.githubusercontent.com/28643606/196130211-c5025f30-648e-45f0-8bf6-e79ce751e44c.png)
----
-
-**Delete KPI**
+![MCC-69 Kelompok 2 Segmen 4-DA-Submit Assesment drawio](https://user-images.githubusercontent.com/80909763/196313295-654a8e56-1553-4d5a-a5e3-df0b2f07a2e6.png)
 
 ---
 
-![MCC-69 Kelompok 2 Segmen 4-DA - Delete KPI drawio](https://user-images.githubusercontent.com/28643606/196130255-abd31efe-fc56-43f7-9edb-858c42023f5b.png)
+**Evaluate Assesment**
 
 ---
 
-**Submit Assesment KPI (Employee)**
----
-
-![MCC-69 Kelompok 2 Segmen 4-DA - Profile drawio](https://user-images.githubusercontent.com/28643606/196130778-d8694dfb-f0b7-4943-89f4-a2df5224efd2.png)
+![MCC-69 Kelompok 2 Segmen 4-DA - Evaluate Self-Assesment drawio](https://user-images.githubusercontent.com/80909763/196313443-42264fd8-c197-4ba5-91a0-20df6d00651c.png)
 
 ---
 
