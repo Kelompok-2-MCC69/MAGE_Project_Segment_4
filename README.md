@@ -9,16 +9,18 @@ MAGE (Metrodata Management Employee) is application that will solve your problem
 
 ### **LINK DESAIN SYSTEM**
 
-https://drive.google.com/file/d/1IjwA-9J1P_sespO4uRXMg1d3ft5PbY_S/view?usp=sharing
+### **BPMN**
 
+https://drive.google.com/file/d/1IjwA-9J1P_sespO4uRXMg1d3ft5PbY_S/view?usp=sharing
+---
 ### **DATA DUMMY**
 
 https://docs.google.com/spreadsheets/d/19eSM3yCE6MOFqctDkuiC_cykwE-U7gO2zV-k1KsBhFE/edit?usp=sharing
-
+---
 ### **MOCKUP**
 
 https://www.figma.com/file/4Tyia91rVeG9biaSfarGqO/MAGE-(METRODATA-MANAGEMENT-EMPLOYEE)?node-id=0%3A1
-
+----
 ## **Our Design Concept for Preparation Create App:**
 
 ### **1. BPMN (Business Process Model and Notation)**
