@@ -19,4 +19,10 @@ public class History {
     private Long id;
 
     private LocalDateTime submitted_at;
+
+    @ManyToOne
+    private Status status;
+
+    @ManyToOne
+    private KPI kpi;
 }

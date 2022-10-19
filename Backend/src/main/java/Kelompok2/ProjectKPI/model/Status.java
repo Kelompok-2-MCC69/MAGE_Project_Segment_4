@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -19,4 +20,7 @@ public class Status {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "status")
+    private List<History> histories;
 }

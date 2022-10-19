@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Entity
 @Table(name = "tb_employee")
 public class Employee {
 
@@ -22,9 +22,11 @@ public class Employee {
 
     private Integer age;
 
+    private String email;
+
     private String phone;
 
-    private enum gender {MALE, FEMALE}
+    private Genders genders;
 
     private Long salary;
 
@@ -37,12 +39,23 @@ public class Employee {
     @PrimaryKeyJoinColumn
     private User user;
 
-    // Job - Employees Relation
-    @ManyToOne
-    private Job job;
-
     // Department - Employees Relation
     @ManyToOne
     private Department department;
 
+    // Department - Manager Relation
+    @OneToMany(mappedBy = "manager")
+    private List<Department> m_department;
+
+    // Job - Employee Relation
+    @ManyToOne
+    private Job job;
+
+    // KPI - Employee Relation
+    @OneToMany(mappedBy = "employee")
+    private List<KPI> e_kpi;
+
+    // KPI - Manager Relation
+    @OneToMany(mappedBy = "manager")
+    private List<KPI> m_kpi;
 }
