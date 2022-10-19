@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -23,10 +24,25 @@ public class Employee {
 
     private String phone;
 
-    private enum gender {MALE,FEMALE}
+    private enum gender {MALE, FEMALE}
 
     private Long salary;
 
+    // Manager - Employee Relation
+    @ManyToOne
+    private Employee manager;
+
+    // User - Employee Relation
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private User user;
+
+    // Job - Employees Relation
+    @ManyToOne
+    private Job job;
+
+    // Department - Employees Relation
+    @ManyToOne
+    private Department department;
 
 }
