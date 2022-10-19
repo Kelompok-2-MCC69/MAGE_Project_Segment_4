@@ -10,8 +10,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tb_assesment")
-public class Assesment {
+@Table(name = "tb_assessment")
+public class Assessment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,5 +32,8 @@ public class Assesment {
     private String  m_comment;
 
     private Integer m_rating;
+
+    @ManyToOne
+    private KPI kpi;
 
 }

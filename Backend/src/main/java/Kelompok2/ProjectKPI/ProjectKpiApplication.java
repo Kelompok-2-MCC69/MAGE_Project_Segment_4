@@ -1,5 +1,7 @@
 package Kelompok2.ProjectKPI;
 
+import Kelompok2.ProjectKPI.model.Employee;
+import Kelompok2.ProjectKPI.model.Genders;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +12,8 @@ public class ProjectKpiApplication {
 
 		SpringApplication.run(ProjectKpiApplication.class, args);
 		System.out.println("Hello Buddy, Your App is Running");
+
+
 	}
 
 }

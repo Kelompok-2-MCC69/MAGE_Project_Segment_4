@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -29,4 +30,18 @@ public class KPI {
 
     private Date year;
 
+    @ManyToOne
+    private Employee employee;
+
+    @ManyToOne
+    private Employee manager;
+
+    @ManyToOne
+    private Status current_stats;
+
+    @OneToMany(mappedBy = "kpi")
+    private List<Assessment> assessments;
+
+    @OneToMany(mappedBy = "kpi")
+    private List<History> histories;
 }

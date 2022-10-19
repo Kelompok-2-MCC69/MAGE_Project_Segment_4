@@ -23,4 +23,7 @@ public class Job {
 
     @Column(nullable = false)
     private String title;
+
+    @OneToMany(mappedBy = "job")
+    private List<Employee> employees;
 }

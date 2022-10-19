@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -19,5 +20,11 @@ public class Department {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employees;
+
+    @ManyToOne
+    private Employee manager;
 
 }
