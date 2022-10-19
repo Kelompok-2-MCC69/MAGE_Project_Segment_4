@@ -70,7 +70,7 @@ https://www.figma.com/file/4Tyia91rVeG9biaSfarGqO/MAGE-(METRODATA-MANAGEMENT-EMP
 **Add KPI**
 ---
 
-![MCC-69 Kelompok 2 Segmen 4-DA - Add New KPI drawio](https://user-images.githubusercontent.com/80909763/196313090-70a03e4a-7058-459c-9b45-147147d9ff1a.png)
+![MCC-69 Kelompok 2 Segmen 4-DA - Add New KPI drawio](https://user-images.githubusercontent.com/80909763/196626014-0a6aff84-9c77-478d-a6ef-a5b0d7d44653.png)
 
 ---
 
@@ -92,6 +92,6 @@ https://www.figma.com/file/4Tyia91rVeG9biaSfarGqO/MAGE-(METRODATA-MANAGEMENT-EMP
 
 ### **4. ERD (Entity–relationship model)**
 
-![MCC-69 Kelompok 2 Segmen 4-ERD - MAGE drawio](https://user-images.githubusercontent.com/80909763/196376178-d8d1a448-a09a-463b-9374-1bd94d4b77d2.png)
+![MCC-69 Kelompok 2 Segmen 4-ERD - MAGEV2 drawio](https://user-images.githubusercontent.com/80909763/196627053-9a6e2dd8-e9dc-4626-9a25-5df8e53f542e.png)
 
 <br>
