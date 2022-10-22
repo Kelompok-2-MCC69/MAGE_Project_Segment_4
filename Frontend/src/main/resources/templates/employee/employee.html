@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+<body>
+    <section Layout:fragment="content" class="container">
+        <!-- Start Content -->
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <h1 class="fw-bold">List of Employee</h1>
+        </div>
+        <table id="table-employee" class="table text-center table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="col-2 text-center">Id</th>
+                    <th class="col-2 text-center">Name</th>
+                    <th class="col-2 text-center">Email</th>
+                    <th class="col-2 text-center">Phone</th>
+                    <th class="col-2 text-center">Salary</th>
+                    <th class="col-2 text-center">Gender</th>
+                </tr>
+            </thead>
+            <!-- <tbody  th:each="employee : ${employees}">
+                <tr>
+                    <td th:text="${employee.id}"></td>
+                    <td th:text="${employee.name}"></td>
+                    <td th:text="${employee.email}"></td>
+                    <td th:text="${employee.phone}"></td>
+                    <td th:text="${employee.salary}"></td>
+                    <td th:text="${employee.gender}"></td>
+                    <td th:text="${employee.manager}"></td>
+                </tr>
+            </tbody> -->
+        </table>
+    </section>
+    <div Layout:fragment="script">
+        <script th:src="@{js/employee.js}"></script>
+    </div>
+</body>
+</html>

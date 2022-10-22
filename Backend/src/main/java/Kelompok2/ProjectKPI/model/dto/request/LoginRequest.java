@@ -7,14 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeRequest {
+public class LoginRequest {
 
-    private String name;
-    private Integer age;
-    private String email;
-    private String phone;
-    private String gender;
-    private Long salary;
     private String username;
     private String password;
 }

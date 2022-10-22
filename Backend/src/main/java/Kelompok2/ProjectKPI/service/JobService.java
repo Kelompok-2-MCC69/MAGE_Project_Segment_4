@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Locale;
 
 @Service
 @AllArgsConstructor
@@ -27,9 +28,13 @@ public class JobService {
         if(job.getId() != null){
             throw new ResponseStatusException(HttpStatus.CONFLICT,"Job is Already Exist");
         }
+        if(jobRepository.findByCode(job.getCode()).isPresent()){
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Job Code is Already Exist");
+        }
         if(jobRepository.findByTitle(job.getTitle()).isPresent()){
             throw new ResponseStatusException(HttpStatus.CONFLICT,"Job Title is Already Exist");
         }
+        job.setCode(job.getCode().toUpperCase());
         return jobRepository.save(job);
     }
 

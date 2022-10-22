@@ -24,9 +24,13 @@ public class RoleService {
     }
 
     public Role create(Role role){
-        if(role.getId()==null){
+        if(role.getId()!=null){
             throw new ResponseStatusException(HttpStatus.CONFLICT,"Role is Already Exist");
         }
+        if(roleRepository.findByName(role.getName()).isPresent()){
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Role Name is Already Exist");
+        }
+        role.setName(role.getName().substring(0,1).toUpperCase() + role.getName().substring(1));
         return roleRepository.save(role);
     }
 

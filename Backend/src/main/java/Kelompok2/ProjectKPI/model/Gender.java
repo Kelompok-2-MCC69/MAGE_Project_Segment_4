@@ -1,7 +1,6 @@
 package Kelompok2.ProjectKPI.model;
 
-public enum Genders {
-
+public enum Gender {
     MALE,
     FEMALE
 }

@@ -1,5 +1,6 @@
 package Kelompok2.ProjectKPI.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,17 +19,24 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false,unique = true)
     private String name;
 
+    @Column(nullable = false)
     private Integer age;
 
+    @Column(nullable = false,unique = true)
     private String email;
 
+    @Column(nullable = false,unique = true,length = 13)
     private String phone;
 
-    private Genders genders;
-
+    @Column(nullable = false)
     private Long salary;
+
+    @Enumerated
+    @Column(nullable = false)
+    private Gender gender;
 
     // Manager - Employee Relation
     @ManyToOne
@@ -44,6 +52,7 @@ public class Employee {
     private Department department;
 
     // Department - Manager Relation
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "manager")
     private List<Department> m_department;
 
@@ -52,10 +61,12 @@ public class Employee {
     private Job job;
 
     // KPI - Employee Relation
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "employee")
     private List<KPI> e_kpi;
 
     // KPI - Manager Relation
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "manager")
     private List<KPI> m_kpi;
 }
