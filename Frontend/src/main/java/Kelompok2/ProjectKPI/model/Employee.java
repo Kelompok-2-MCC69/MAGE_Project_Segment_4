@@ -21,6 +21,4 @@ public class Employee {
     private Role role;
     private Department department;
     private Job job;
-
-    
 }

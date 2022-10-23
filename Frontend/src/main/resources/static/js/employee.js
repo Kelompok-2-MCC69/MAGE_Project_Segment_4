@@ -6,26 +6,29 @@ $(document).ready(function () {
         },
         columns: [
             {
-                data: 'id'
+                data: null,
+                render: (data, type, row, meta) => {
+                    return meta.row + 1
+                }
             },
             {
                 data: 'name'
             }, 
             {
-                data: 'age'
-            }, 
-            {
                 data: 'email'
             }, 
             {
+                data: 'age'
+            },
+            {
                 data: 'phone'
-            }, 
+            },
             {
                 data: 'salary'
-            }, 
+            },
             {
-                data: 'gender'
-            }, 
+                data: 'manager.name'
+            },
         ]
     })
 });

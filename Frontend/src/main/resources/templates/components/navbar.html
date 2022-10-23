@@ -24,7 +24,7 @@
                         <a class="nav-link" th:classappend=" ${isActive} == 'employee' ? 'active':'' "th:href="@{/employee}">Employee</a>
                         <a class="nav-link"th:classappend=" ${isActive} == 'kpi' ? 'active':'' " href="#">KPI</a> 
                         <a class="nav-link" th:classappend=" ${isActive} == 'user' ? 'active':''" href=" #">Department</a>
-                        <a class="nav-link" th:classappend=" ${isActive} == 'role' ? 'active':''" href=" #">Job</a>
+                        <a class="nav-link" th:classappend=" ${isActive} == 'role' ? 'active':''" th:href="@{/job}">Job</a>
                     </div>
                     <div>
                         <form th:action="@{/logout}" th:method="POST">

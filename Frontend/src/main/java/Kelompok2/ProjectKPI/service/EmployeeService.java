@@ -28,8 +28,4 @@ public class EmployeeService {
         return restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Employee>>(){}).getBody();
     }
 
-    public Employee getById(Long id){
-        return restTemplate.exchange(url, HttpMethod.GET,null,new ParameterizedTypeReference<Employee>(){}).getBody();
-    }
-
 }

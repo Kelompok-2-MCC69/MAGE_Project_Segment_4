@@ -28,6 +28,7 @@ public class KPIService {
         if(kpi.getId() != null){
             throw new ResponseStatusException(HttpStatus.CONFLICT, "KPI is Already Exist");
         }
+
         return kpiRepository.save(kpi);
     }
 

@@ -14,6 +14,7 @@ public class AssessmentController {
 
     private AssessmentService assessmentService;
 
+    @GetMapping
     public List<Assessment> getAll(){
         return assessmentService.getAll();
     }

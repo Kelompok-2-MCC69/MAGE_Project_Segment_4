@@ -34,7 +34,7 @@ public class Employee {
     @Column(nullable = false)
     private Long salary;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Gender gender;
 
@@ -53,7 +53,7 @@ public class Employee {
 
     // Department - Manager Relation
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "manager")
+    @OneToMany(mappedBy = "manager", cascade = CascadeType.ALL)
     private List<Department> m_department;
 
     // Job - Employee Relation
@@ -62,11 +62,11 @@ public class Employee {
 
     // KPI - Employee Relation
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
     private List<KPI> e_kpi;
 
     // KPI - Manager Relation
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "manager")
+    @OneToMany(mappedBy = "manager",cascade = CascadeType.ALL)
     private List<KPI> m_kpi;
 }

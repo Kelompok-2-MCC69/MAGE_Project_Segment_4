@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +24,8 @@ public class Assessment {
     @Column(nullable = false)
     private Integer weight;
 
-    private Integer rating;
+    @Column(nullable = false)
+    private String KPIrating;
 
     private String e_comment;
 
