@@ -1,6 +1,7 @@
 package Kelompok2.ProjectKPI.controller;
 
 import Kelompok2.ProjectKPI.model.Assessment;
+import Kelompok2.ProjectKPI.model.dto.request.AssessmentRequest;
 import Kelompok2.ProjectKPI.service.AssessmentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,8 @@ public class AssessmentController {
     }
 
     @PostMapping
-    public Assessment create(@RequestBody Assessment assessment){
-        return assessmentService.create(assessment);
+    public Assessment create(@RequestBody AssessmentRequest assessmentRequest){
+        return assessmentService.create(assessmentRequest);
     }
 
     @PutMapping("/{id}")
@@ -37,5 +38,10 @@ public class AssessmentController {
     @DeleteMapping("/{id}")
     public Assessment delete(@PathVariable Long id){
         return assessmentService.delete(id);
+    }
+
+    @GetMapping("/kpi/{id}")
+    public List<Assessment> getByKPI(@PathVariable Long id){
+        return assessmentService.getByKPI(id);
     }
 }

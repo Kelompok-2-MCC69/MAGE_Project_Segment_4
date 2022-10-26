@@ -1,6 +1,7 @@
 package Kelompok2.ProjectKPI.controller;
 
 import Kelompok2.ProjectKPI.model.KPI;
+import Kelompok2.ProjectKPI.model.dto.request.KPIRequest;
 import Kelompok2.ProjectKPI.service.KPIService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,8 @@ public class KPIController {
     }
 
     @PostMapping
-    public KPI create(@RequestBody KPI kpi){
-        return kpiService.create(kpi);
+    public KPI create(@RequestBody KPIRequest kpiRequest){
+        return kpiService.create(kpiRequest);
     }
 
     @PutMapping("/{id}")

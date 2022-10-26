@@ -11,39 +11,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import Kelompok2.ProjectKPI.model.Job;
-import Kelompok2.ProjectKPI.service.JobService;
+import Kelompok2.ProjectKPI.model.KPI;
+import Kelompok2.ProjectKPI.service.KPIService;
 import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/job")
-public class JobRestController {
+@RequestMapping("/api/kpi")
+public class KPIRestController {
     
-    private JobService jobService;
+    private KPIService kpiService; 
 
     @GetMapping
-    public List<Job> getAll(){
-        return jobService.getAll();
+    public List<KPI> getAll(){
+        return kpiService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Job getById(@PathVariable Long id) {
-        return jobService.getById(id);
+    public KPI getById(@PathVariable Long id) {
+        return kpiService.getById(id);
     }
 
     @PostMapping
-    public Job create(@RequestBody Job job){
-        return jobService.create(job);
+    public KPI create(@RequestBody KPI kpi){
+        return kpiService.create(kpi);
     }
 
     @PutMapping("/{id}")
-    public Job update(@RequestBody Job job,@PathVariable Long id){
-        return jobService.update(job,id);
+    public KPI update(@RequestBody KPI kpi,@PathVariable Long id){
+        return kpiService.update(kpi,id);
     }
 
     @DeleteMapping("/{id}")
-    public Job delete(@PathVariable Long id){
-        return jobService.delete(id);
+    public KPI delete(@PathVariable Long id){
+        return kpiService.delete(id);
     }
+
 }

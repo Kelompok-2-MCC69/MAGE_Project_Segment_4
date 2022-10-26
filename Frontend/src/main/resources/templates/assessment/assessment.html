@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}"></html>
+
+<body>
+    <section Layout:fragment="content" class="container">
+        <!-- Start Content -->
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <h1 class="fw-bold">Assessment</h1>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createAssessment">Add Assesment</button>
+        </div>
+        <div>
+            <h3>Employee : <span th:text=" ${kpi.employee.name}" ></span></h3>
+            <h3>Manager : <span th:text=" ${kpi.manager.name}" ></span></h3>
+            <h3>KPI : <span th:text=" ${kpi.year}" ></span></h3>
+        </div>
+        <table id="table-assessment" class="table text-center table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="col-0.5 text-center">No</th>
+                    <th class="col-2 text-center">Indicator</th>
+                    <th class="col-0.5 text-center">Weight</th>
+                    <th class="col-2 text-center">KPI Rating</th>
+                    <th class="col-2 text-center">E - Comment</th>
+                    <th class="col-0.5 text-center">E - Rating</th>
+                    <th class="col-2 text-center">M - Comment</th>
+                    <th class="col-0.5 text-center">M - Rating</th>
+                    <th class="col-0.5 text-center">KPI Id</th>
+                    <!-- <th class="col-2 text-center">Action</th> -->
+                    <!-- <td class="d-flex justify-content-center align-items-center gap-3">
+                        <a class="btn btn-primary" th:href="@{/assessment/update/{id} (id=${assessment.id})}">Edit</a>
+                        <form th:action="@{/assessment/{id} (id=${assessment.id})}" th:method="DELETE">
+                            <button class="btn btn-danger" onclick="return confirm('Are you sure want to delete this ?')" type="submit">
+                                Delete
+                            </button>
+                        </form>
+                    </td> -->
+                </tr>
+            </thead>
+            <tbody  th:each="assessment : ${assessments}">
+                <tr>
+                    <td th:text="${assessment.id}"></td>
+                    <td th:text="${assessment.indicator}"></td>
+                    <td th:text="${assessment.weight}"></td>
+                    <td th:text="${assessment.kpiRating}"></td>
+                    <td th:text="${assessment.e_comment}"></td>
+                    <td th:text="${assessment.e_rating}"></td>
+                    <td th:text="${assessment.m_comment}"></td>
+                    <td th:text="${assessment.m_rating}"></td>
+                    <td th:text="${assessment.kpi.id}"></td>
+                </tr>
+            </tbody>
+        </div>
+    </table>
+    <div>
+        <a th:href="@{/kpi}" class="btn btn-danger">Back</a>
+    </div>
+        
+</body>
+</html>

@@ -1,24 +1,21 @@
-package Kelompok2.ProjectKPI.model;
+package Kelompok2.ProjectKPI.model.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class Employee {
-    
-    private Long id;
+public class EmployeeRequest {
+
     private String name;
     private Integer age;
     private String email;
     private String phone;
-    private Long salary;
     private String gender;
-    private Employee manager;
-    private User user;
-    private Role role;
-    private Department department;
-    private Job job;
+    private Long salary;
+    private String username;
+    private String password;
+    
 }

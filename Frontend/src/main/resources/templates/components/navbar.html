@@ -22,7 +22,7 @@
                 <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" th:classappend=" ${isActive} == 'employee' ? 'active':'' "th:href="@{/employee}">Employee</a>
-                        <a class="nav-link"th:classappend=" ${isActive} == 'kpi' ? 'active':'' " href="#">KPI</a> 
+                        <a class="nav-link"th:classappend=" ${isActive} == 'kpi' ? 'active':'' " th:href="@{/kpi}">KPI</a> 
                         <a class="nav-link" th:classappend=" ${isActive} == 'user' ? 'active':''" href=" #">Department</a>
                         <a class="nav-link" th:classappend=" ${isActive} == 'role' ? 'active':''" th:href="@{/job}">Job</a>
                     </div>
