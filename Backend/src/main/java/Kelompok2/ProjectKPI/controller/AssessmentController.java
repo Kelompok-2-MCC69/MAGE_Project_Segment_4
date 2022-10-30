@@ -31,8 +31,8 @@ public class AssessmentController {
     }
 
     @PutMapping("/{id}")
-    public Assessment update(@RequestBody Assessment assessment, @PathVariable Long id){
-        return assessmentService.update(assessment,id);
+    public Assessment update(@RequestBody AssessmentRequest assessmentRequest, @PathVariable Long id){
+        return assessmentService.update(assessmentRequest,id);
     }
 
     @DeleteMapping("/{id}")
@@ -43,5 +43,10 @@ public class AssessmentController {
     @GetMapping("/kpi/{id}")
     public List<Assessment> getByKPI(@PathVariable Long id){
         return assessmentService.getByKPI(id);
+    }
+
+    @GetMapping("/sum/{id}")
+    public Integer sumScore(@PathVariable Long id){
+        return assessmentService.sumScore(id);
     }
 }

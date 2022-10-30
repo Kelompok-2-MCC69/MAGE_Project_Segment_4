@@ -24,7 +24,7 @@ public class UserController {
         return userService.getById(id);
     }
 
-    @PostMapping("{id}")
+    @PostMapping("/{id}")
     public User addRole(@RequestBody Role role, @PathVariable Long id){
         return userService.addRole(role,id);
     }

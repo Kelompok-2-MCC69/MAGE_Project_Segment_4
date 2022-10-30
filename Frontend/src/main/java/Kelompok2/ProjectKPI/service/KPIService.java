@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import Kelompok2.ProjectKPI.model.KPI;
+import Kelompok2.ProjectKPI.model.dto.request.KpiRequest;
 
 @Service
 public class KPIService {
@@ -36,8 +37,8 @@ public class KPIService {
         return restTemplate.exchange(url, HttpMethod.POST, new HttpEntity(kpi), new ParameterizedTypeReference<KPI>() {}).getBody();
     }
 
-    public KPI update(KPI kpi,Long id){
-        return restTemplate.exchange(url + "/" + id, HttpMethod.PUT,new HttpEntity(kpi), new ParameterizedTypeReference<KPI>(){}).getBody();
+    public KPI update(KpiRequest kpiRequest,Long id){
+        return restTemplate.exchange(url + "/" + id, HttpMethod.PUT,new HttpEntity(kpiRequest), new ParameterizedTypeReference<KPI>(){}).getBody();
     }
 
     public KPI delete(Long id){

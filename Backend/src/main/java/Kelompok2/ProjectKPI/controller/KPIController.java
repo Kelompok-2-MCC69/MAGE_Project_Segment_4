@@ -31,8 +31,8 @@ public class KPIController {
     }
 
     @PutMapping("/{id}")
-    public KPI update(@RequestBody KPI kpi, @PathVariable Long id){
-        return kpiService.update(kpi,id);
+    public KPI update(@RequestBody KPIRequest kpiRequest, @PathVariable Long id){
+        return kpiService.update(kpiRequest,id);
     }
 
     @DeleteMapping("/{id}")

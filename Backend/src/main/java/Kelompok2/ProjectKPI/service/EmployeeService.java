@@ -46,10 +46,12 @@ public class EmployeeService {
     return employeeRepository.save(employee);
     }
 
-    public Employee update(Employee employee,Long id){
+    public Employee update(EmployeeRequest employeeRequest,Long id){
+        Employee employee = modelMapper.map(employeeRequest,Employee.class);
         getById(id);
         employee.setId(id);
         employee.setUser(employee.getUser());
+        employee.setManager(employeeRepository.findByName(employeeRequest.getManagerName()));
         return employeeRepository.save(employee);
     }
 

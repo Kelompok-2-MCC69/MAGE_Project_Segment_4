@@ -4,12 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class KPIRequest {
-
+public class KpiRequest {
     private Long id;
     private String created_at;
     private String first_deadline;

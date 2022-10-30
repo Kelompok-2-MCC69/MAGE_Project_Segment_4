@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Kelompok2.ProjectKPI.model.KPI;
+import Kelompok2.ProjectKPI.model.dto.request.KpiRequest;
 import Kelompok2.ProjectKPI.service.KPIService;
 import lombok.AllArgsConstructor;
 
@@ -38,8 +39,8 @@ public class KPIRestController {
     }
 
     @PutMapping("/{id}")
-    public KPI update(@RequestBody KPI kpi,@PathVariable Long id){
-        return kpiService.update(kpi,id);
+    public KPI update(@RequestBody KpiRequest kpiRequest,@PathVariable Long id){
+        return kpiService.update(kpiRequest,id);
     }
 
     @DeleteMapping("/{id}")

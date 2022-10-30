@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -33,17 +34,16 @@ public class AssessmentService {
     }
 
     public Assessment create(AssessmentRequest assessmentRequest){
-//        if(assessmentsRepository.findByIndicator(assessmentRequest.getIndicator()).isPresent()){
-//            throw new ResponseStatusException(HttpStatus.CONFLICT,"Assessment is Already Exist");
-//        }
         Assessment assessment = modelMapper.map(assessmentRequest,Assessment.class);
         assessment.setKpi(kpiService.getById(assessmentRequest.getKpiId()));
         return assessmentsRepository.save(assessment);
     }
 
-    public Assessment update(Assessment assessment, Long id){
+    public Assessment update(AssessmentRequest assessmentRequest, Long id){
+        Assessment assessment = modelMapper.map(assessmentRequest,Assessment.class);
         getById(id);
         assessment.setId(id);
+        assessment.setKpi(kpiService.getById(assessmentRequest.getKpiId()));
         return assessmentsRepository.save(assessment);
     }
 
@@ -53,6 +53,9 @@ public class AssessmentService {
         return assessment;
     }
 
+    public Integer sumScore(Long id){
+        return assessmentsRepository.sumScore(id);
+    }
 
 }
 

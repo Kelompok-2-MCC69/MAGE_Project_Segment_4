@@ -17,4 +17,5 @@ public class EmployeeRequest {
     private Long salary;
     private String username;
     private String password;
+    private String managerName;
 }

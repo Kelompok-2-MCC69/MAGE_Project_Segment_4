@@ -1,15 +1,15 @@
 package Kelompok2.ProjectKPI.controller;
 
-import java.util.List;
-
-import javax.websocket.server.PathParam;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import Kelompok2.ProjectKPI.model.dto.request.AssessmentRequest;
 import Kelompok2.ProjectKPI.service.AssessmentService;
 import Kelompok2.ProjectKPI.service.KPIService;
 import lombok.AllArgsConstructor;
@@ -22,19 +22,44 @@ public class AssessmentController {
     private AssessmentService assessmentService;
     private KPIService kpiService;
 
-    @GetMapping
-    public String getByKPI(Model model){
-        model.addAttribute("kpi", kpiService.getById(1L));
-        model.addAttribute("assessments", assessmentService.getByKPI(1L));
-        // model.addAttribute("kpi", kpiService.getById(id));
-        // model.addAttribute("assessments", assessmentService.getByKPI(id));
+    @GetMapping("/{id}")
+    public String getByKPI(Model model, @PathVariable Long id){
+        model.addAttribute("kpi", kpiService.getById(id));
+        model.addAttribute("assessments", assessmentService.getByKPI(id));
+        model.addAttribute("score", assessmentService.sumScore(id));
         return "assessment/assessment";
     }
 
-    // @GetMapping
-    // public String getByKPI(Model model, Long id){
-    //     model.addAttribute("kpi", assessmentService.getByKPI(id));
-    //     return "assessment/assessment";
-    // }
+    @GetMapping("/create/{id}")
+    public String createAssessment(Model model,@PathVariable Long id){
+        model.addAttribute("kpi", kpiService.getById(id));
+        model.addAttribute("assessmentRequest", new AssessmentRequest());
+        return "assessment/createAss";
+    }
+
+    @PostMapping
+    public String saveAssessment(AssessmentRequest assessmentRequest){
+        assessmentService.create(assessmentRequest);
+        return "redirect:/kpi";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String beforeUpdate(Model model, @PathVariable Long id){
+        model.addAttribute("assessment", assessmentService.getById(id));
+        // model.addAttribute("assessmentRequest", new AssessmentRequest());
+        return "assessment/updateAss";
+    }
+
+    @PutMapping("/edit/{id}")
+    public String updated(AssessmentRequest assessmentRequest, @PathVariable Long id){
+        assessmentService.update(assessmentRequest, id);
+        return "redirect:/kpi";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Long id){
+        assessmentService.delete(id);
+        return "redirect:/kpi";
+    }
 
 }

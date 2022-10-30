@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}"></html>
+
+<body>
+    <div Layout:fragment="content" class="container col-4 text-center">
+        <div>
+            <h1 class="fw-bold">Editting Assessment</h1>
+        </div>
+
+        <form th:action="@{/assessment/edit/{id} (id=${assessment.id})}" th:object="${assessment}" th:method="PUT">
+            <div>
+                <div class="form-group row">
+                    <label class="col-form-label" for="indicator">Indicator</label>
+                    <input type="text" th:field="*{indicator}" class="form-control text-center col-4">
+                    <label class="col-form-label" for="weight">Weight</label>
+                    <input type="text" th:field="*{weight}" class="form-control text-center col-4">
+                    <label class="col-form-label" for="kpiRating">KPI Rating</label>
+                    <input type="text" th:field="*{kpiRating}" class="form-control text-center col-4">
+                    <label class="col-form-label" for="e_comment">Employee Comment</label>
+                    <input type="text" th:field="*{e_comment}" class="form-control text-center col-4">
+                    <label class="col-form-label" for="e_rating">Employee Rating</label>
+                    <input type="text" th:field="*{e_rating}" class="form-control text-center col-4">
+                    <label class="col-form-label" for="m_comment">Manager Comment</label>
+                    <input type="text" th:field="*{m_comment}" class="form-control text-center col-4">
+                    <label class="col-form-label" for="m_rating">Manager Rating</label>
+                    <input type="text" th:field="*{m_rating}" class="form-control text-center col-4">
+                    <input type="hidden" th:value="${assessment.kpi.id}" th:attr="name='kpiId'"/>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a th:href="@{/assessment/{id} (id=${assessment.kpi.id})}" class="btn btn-danger">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface KPIRepository extends JpaRepository<KPI,Long> {
@@ -16,4 +17,6 @@ public interface KPIRepository extends JpaRepository<KPI,Long> {
 //    @Query("UPDATE KPI k join k.assessments a " +
 //            "SET kpi.final_score = count(a.m_rating) WHERE k.id = ?1")
 //    int countFinalScore(Long id);
+
+    List<KPI> getByEmployee(String name);
 }

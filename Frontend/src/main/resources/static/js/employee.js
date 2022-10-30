@@ -64,6 +64,8 @@ function findById(id) {
             $('#employeePhone').text(`${result.phone}`)
             $('#employeeGender').text(`${result.gender}`)
             $('#employeeSalary').text(`${result.salary}`)
+            $('#employeeUsername').text(`${result.user.username}`)
+            $('#employeePassword').text(`${result.user.password}`)
         }
     })
 }

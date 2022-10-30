@@ -22,8 +22,4 @@ public class AssessmentRestController {
         return assessmentService.getAll();
     }
 
-    // @GetMapping("/kpi/{id}")
-    // public List<Assessment> getByKPI(Long id){
-    //     return assessmentService.getByKPI(id);
-    // }
 }
