@@ -36,5 +36,12 @@ public class KPIController {
         kpiService.delete(id);
         return "redirect:/kpi";
     }
+
+    @GetMapping("/mykpi")
+    public String getMyKpi(Model model){
+        model.addAttribute("isActive", "mykpi");
+        model.addAttribute("mykpis", kpiService.getMyKPI(2L));
+        return "kpi/mykpi";
+    }
     
 }

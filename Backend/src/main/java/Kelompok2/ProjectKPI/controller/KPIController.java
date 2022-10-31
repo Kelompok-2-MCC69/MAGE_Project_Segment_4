@@ -40,4 +40,8 @@ public class KPIController {
         return kpiService.delete(id);
     }
 
+    @GetMapping("/myKpi/{id}")
+    public List<KPI> getMyKPI(@PathVariable Long id){
+        return kpiService.getMyKpi(id);
+    }
 }

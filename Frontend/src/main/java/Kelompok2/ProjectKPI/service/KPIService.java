@@ -1,6 +1,7 @@
 package Kelompok2.ProjectKPI.service;
 
 import java.util.List;
+import java.util.concurrent.Exchanger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -43,5 +44,9 @@ public class KPIService {
 
     public KPI delete(Long id){
         return restTemplate.exchange(url + "/" + id, HttpMethod.DELETE,null, new ParameterizedTypeReference<KPI>() {}).getBody();
+    }
+
+    public List<KPI> getMyKPI(Long id){
+        return restTemplate.exchange(url + "/myKpi/" + id , HttpMethod.GET,null,new ParameterizedTypeReference<List<KPI>>() {}).getBody();
     }
 }

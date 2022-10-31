@@ -40,18 +40,13 @@
                     <!-- <td th:text="${assessment.kpi.id}"></td> -->
                     <td class="d-flex justify-content-center align-items-center gap-1">
                         <a class="btn btn-primary" th:href="@{/assessment/edit/{id} (id=${assessment.id})}">Edit</a>
-                        <form th:action="@{/assessment/{id} (id=${assessment.id})}" th:method="DELETE" sec:authorize="hasRole('MANAGER')">
-                            <button class="btn btn-danger" onclick="return confirm('Are you sure want to delete this ?')" type="submit">
-                                Delete
-                            </button>
-                        </form>
                     </td>
                 </tr>
             </tbody>
         </div>
     </table>
     <div class="d-flex justify-content-between align-items-center mt-2">
-        <a th:href="@{/kpi}" class="btn btn-dark">Back</a>
+        <a th:href="@{/kpi/mykpi}" class="btn btn-dark">Back</a>
         <h5>Total Score : <span th:text="${score}" value="-"></span></h5>
        
     </div>

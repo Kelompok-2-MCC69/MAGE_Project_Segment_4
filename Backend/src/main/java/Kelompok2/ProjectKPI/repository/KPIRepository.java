@@ -2,11 +2,9 @@ package Kelompok2.ProjectKPI.repository;
 
 import Kelompok2.ProjectKPI.model.KPI;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -18,5 +16,7 @@ public interface KPIRepository extends JpaRepository<KPI,Long> {
 //            "SET kpi.final_score = count(a.m_rating) WHERE k.id = ?1")
 //    int countFinalScore(Long id);
 
-    List<KPI> getByEmployee(String name);
+    @Query(value = "select * from tb_kpi k where k.employee_id = :id",
+            nativeQuery = true)
+    List<KPI> getByMyKpi(Long id);
 }

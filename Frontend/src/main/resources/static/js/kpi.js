@@ -24,10 +24,10 @@ $(document).ready(function () {
                 defaultContent: ' ',
                 data: 'employee.name'
             },
-            {   
-                defaultContent: ' ',
-                data: 'manager.name'
-            },
+            // {   
+            //     defaultContent: ' ',
+            //     data: 'manager.name'
+            // },
             {
                 defaultContent: '0',
                 data: 'final_score'

@@ -1,6 +1,5 @@
 package Kelompok2.ProjectKPI.service;
 
-import Kelompok2.ProjectKPI.model.Assessment;
 import Kelompok2.ProjectKPI.model.Employee;
 import Kelompok2.ProjectKPI.model.KPI;
 import Kelompok2.ProjectKPI.model.dto.request.KPIRequest;
@@ -69,6 +68,10 @@ public class KPIService {
         Employee managerKPI = employeeService.getById(manager.getId());
         newKpi.setEmployee(managerKPI);
         return kpiRepository.save(newKpi);
+    }
+
+    public List<KPI> getMyKpi(Long id){
+        return kpiRepository.getByMyKpi(id);
     }
 
 

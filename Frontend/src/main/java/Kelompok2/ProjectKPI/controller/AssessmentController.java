@@ -62,4 +62,13 @@ public class AssessmentController {
         return "redirect:/kpi";
     }
 
+    @GetMapping("/myass/{id}")
+    public String getByKPIEmp(Model model, @PathVariable Long id){
+        model.addAttribute("kpi", kpiService.getById(id));
+        model.addAttribute("assessments", assessmentService.getByKPI(id));
+        model.addAttribute("score", assessmentService.sumScore(id));
+        return "assessment/assessmentEmp";
+    }
+
+
 }
