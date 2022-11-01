@@ -65,6 +65,7 @@ $('#create-kpi').click((e) => {
         url: "api/kpi",
         dataType: "JSON",
         contentType: "application/json",
+        beforeSend: addCsrfToken(),
         data: JSON.stringify({
             employeeId: employeeVal,
             managerId: managerVal
@@ -101,6 +102,7 @@ function deleteKPI(id) {
                 url: "api/kpi/" + id,
                 dataType: "json",
                 contentType: "application/json",
+                beforeSend: addCsrfToken(),
                 success: (res) => {
                     $('#table-kpi').DataTable().ajax.reload()
                     Swal.fire(
@@ -149,6 +151,7 @@ $("#update-kpi").click((e) => {
         url: "api/kpi/" + id,
         dataType: "json",
         contentType: "application/json",
+        beforeSend: addCsrfToken(),
         data: JSON.stringify({
             created_at: create,
             first_deadline: deadline1,

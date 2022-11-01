@@ -38,9 +38,11 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
             http
                     .csrf().disable()
-                    .cors().disable()
                     .authorizeRequests()
-                    .anyRequest().permitAll()
+                    .antMatchers("/login/**").permitAll()
+                    .antMatchers("/kpi/**").hasRole("MANAGER")
+                    .antMatchers("/employee/**").hasRole("MANAGER")
+                    .antMatchers("/mykpi/**").hasRole("EMPLOYEE")
                     .and()
                     .httpBasic();
 

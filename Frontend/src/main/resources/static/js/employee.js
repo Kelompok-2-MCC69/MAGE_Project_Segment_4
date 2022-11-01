@@ -98,6 +98,7 @@ $('#create-employee').click((e) => {
             url: "api/employee",
             dataType: "json",
             contentType: "application/json",
+            beforeSend: addCsrfToken(),
             data: JSON.stringify({
                 name: nameValue,
                 age : ageValue,
