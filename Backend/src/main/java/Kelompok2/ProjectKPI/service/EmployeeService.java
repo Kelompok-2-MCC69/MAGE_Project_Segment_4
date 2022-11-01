@@ -6,6 +6,7 @@ import Kelompok2.ProjectKPI.repository.EmployeeRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class EmployeeService {
     private EmployeeRepository employeeRepository;
+    private PasswordEncoder passwordEncoder;
     private RoleService roleService;
     private JobService jobService;
     private ModelMapper modelMapper;
@@ -35,6 +37,8 @@ public class EmployeeService {
 
     //Set User
     User user = modelMapper.map(employeeRequest,User.class);
+
+    user.setPassword(passwordEncoder.encode(employeeRequest.getPassword()));
 
     //Set Role
     List<Role> roles =new ArrayList<>();

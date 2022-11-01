@@ -5,6 +5,7 @@ import Kelompok2.ProjectKPI.model.User;
 import Kelompok2.ProjectKPI.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -15,7 +16,7 @@ import java.util.List;
 public class UserService {
 
     private UserRepository userRepository;
-
+    private PasswordEncoder passwordEncoder;
     private RoleService roleService;
 
     public List<User> getAll(){
@@ -31,6 +32,7 @@ public class UserService {
         user.setId(id);
         user.setEmployee(newUser.getEmployee());
         user.setRoles(newUser.getRoles());
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         return userRepository.save(user);
     }

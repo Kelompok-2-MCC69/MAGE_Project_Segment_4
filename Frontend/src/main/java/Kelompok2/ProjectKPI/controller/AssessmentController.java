@@ -71,4 +71,15 @@ public class AssessmentController {
     }
 
 
+    @GetMapping("/edit/myass/{id}")
+    public String beforeUpdateEmp(Model model, @PathVariable Long id){
+        model.addAttribute("assessment", assessmentService.getById(id));
+        return "assessment/updateAssEmp";
+    }
+
+    @PutMapping("/edit/myass/{id}")
+    public String updatedEmp(AssessmentRequest assessmentRequest, @PathVariable Long id){
+        assessmentService.update(assessmentRequest, id);
+        return "redirect:/kpi/mykpi";
+    }
 }
