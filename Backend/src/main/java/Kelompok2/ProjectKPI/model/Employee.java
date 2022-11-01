@@ -1,5 +1,6 @@
 package Kelompok2.ProjectKPI.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,10 +8,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Entity
 @Table(name = "tb_employee")
 public class Employee {
 
@@ -18,15 +19,24 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false,unique = true)
     private String name;
 
+    @Column(nullable = false)
     private Integer age;
 
+    @Column(nullable = false,unique = true)
+    private String email;
+
+    @Column(nullable = false,unique = true,length = 13)
     private String phone;
 
-    private enum gender {MALE, FEMALE}
-
+    @Column(nullable = false)
     private Long salary;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Gender gender;
 
     // Manager - Employee Relation
     @ManyToOne
@@ -37,12 +47,26 @@ public class Employee {
     @PrimaryKeyJoinColumn
     private User user;
 
-    // Job - Employees Relation
-    @ManyToOne
-    private Job job;
-
     // Department - Employees Relation
     @ManyToOne
     private Department department;
 
+    // Department - Manager Relation
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "manager", cascade = CascadeType.ALL)
+    private List<Department> m_department;
+
+    // Job - Employee Relation
+    @ManyToOne
+    private Job job;
+
+    // KPI - Employee Relation
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
+    private List<KPI> e_kpi;
+
+    // KPI - Manager Relation
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "manager",cascade = CascadeType.ALL)
+    private List<KPI> m_kpi;
 }

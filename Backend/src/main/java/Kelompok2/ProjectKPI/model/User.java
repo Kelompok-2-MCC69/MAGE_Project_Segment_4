@@ -25,7 +25,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    private Boolean isEnabled = false;
+    private Boolean isEnabled = true;
 
     private Boolean isAccountNonLocked = true;
 

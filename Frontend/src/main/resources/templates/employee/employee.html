@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+<body>
+    <section Layout:fragment="content" class="container">
+        <!-- Start Content -->
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <h1 class="fw-bold">List of Employee</h1>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createEmployee">Add Employee</button>
+        </div>
+        <table id="table-employee" class="table text-center table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="col-0.5 text-center">No</th>
+                    <th class="col-2 text-center">Name</th>
+                    <th class="col-1 text-center">Email</th>
+                    <th class="col-2 text-center">Phone</th>
+                    <th class="col-1 text-center">Salary</th>
+                    <th class="col-2 text-center">Manager</th>
+                    <th class="col-3 text-center">Action</th>
+                </tr>
+            </thead>
+        </table>
+        <!-- End Content -->
+
+                <!-- Modal Detail -->
+                <div class="modal fade" id="detailEmployee" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold" id="staticBackdropLabel">Detail Employee</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body d-flex gap-5 ">
+                            <div>
+                                <p>Id</p>
+                                <p>Name</p>
+                                <p>Age</p>
+                                <p>Email</p>
+                                <p>Phone Number</p>
+                                <p>Gender</p>
+                                <p>Salary</p>
+                                <p>Username</p>
+                                <p>Password</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold" id="employeeId"></p>
+                                <p class="fw-bold" id="employeeName"></p>
+                                <p class="fw-bold" id="employeeAge"></p>
+                                <p class="fw-bold" id="employeeEmail"></p>
+                                <p class="fw-bold" id="employeePhone"></p>
+                                <p class="fw-bold" id="employeeGender"></p>
+                                <p class="fw-bold" id="employeeSalary"></p>
+                                <p class="fw-bold" id="employeeUsername"></p>
+                                <p class="fw-bold" id="employeePassword"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button type="button" class="btn btn-secondary px-5" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Modal Details -->
+
+        <!-- Start Modal Create -->
+        <div class="modal fade" id="createEmployee" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="staticBackdropLabel">Add Employee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Name</label>
+                                <input type="text" class="form-control" id="employee-name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Age</label>
+                                <input type="text" class="form-control" id="employee-age" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Email</label>
+                                <input type="text" class="form-control" id="employee-email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Phone Number</label>
+                                <input type="text" class="form-control" id="employee-phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Gender</label>
+                                <input type="text" class="form-control" id="employee-gender" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Salary</label>
+                                <input type="text" class="form-control" id="employee-salary" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Username</label>
+                                <input type="text" class="form-control" id="employee-username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Password</label>
+                                <input type="text" class="form-control" id="employee-password" required>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="create-employee">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal Create -->
+    </section>
+    <div Layout:fragment="script">
+        <script th:src="@{js/employee.js}"></script>
+    </div>
+</body>
+</html>

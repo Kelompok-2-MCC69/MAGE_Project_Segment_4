@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+<body>
+    <section Layout:fragment="content" class="container">
+        <!-- Start Content -->
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <h1 class="fw-bold">List of Job</h1>
+        </div>
+        <table id="table-job" class="table text-center table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="col-2 text-center">Id</th>
+                    <th class="col-5 text-center">Code</th>
+                    <th class="col-5 text-center">Title</th>
+                </tr>
+            </thead>
+        </table>
+    </section>
+    <div Layout:fragment="script">
+        <script th:src="@{js/job.js}"></script>
+    </div>
+</body>
+</html>

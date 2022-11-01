@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -18,5 +19,11 @@ public class History {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime submitted_at;
+    private Date date;
+
+    @ManyToOne
+    private Status status;
+
+    @ManyToOne
+    private KPI kpi;
 }

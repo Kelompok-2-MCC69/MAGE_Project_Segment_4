@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}"></html>
+
+<body>
+    <section Layout:fragment="content" class="container">
+        <!-- Start Content -->
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <h1 class="fw-bold">Assessment</h1>
+        </div>
+        <div>
+            <h3>Manager : <span th:text=" ${kpi.manager.name}" ></span></h3>
+            <h3>Employee : <span th:text=" ${kpi.employee.name}" ></span></h3>
+            <h3>KPI : <span th:text=" ${kpi.year}" ></span></h3>
+            <a th:href="@{/assessment/create/{id} (id=${kpi.id})}" class="btn btn-success" sec:authorize="hasRole('MANAGER')">Add Assessment</a>
+        </div>
+        <table id="table-assessment" class="table text-center table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="col-0.5 text-center">No</th>
+                    <th class="col-1.5 text-center">Indicator</th>
+                    <th class="col-0.5 text-center">Weight</th>
+                    <th class="col-2 text-center">KPI Rating</th>
+                    <th class="col-2 text-center">E - Comment</th>
+                    <th class="col-1 text-center">E - Rating</th>
+                    <th class="col-2 text-center">M - Comment</th>
+                    <th class="col-2 text-center">M - Rating</th>
+                    <th class="col-1.5 text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody  th:each="assessment, no : ${assessments}">
+                <tr>
+                    <td th:text="${no.count}"></td>
+                    <td th:text="${assessment.indicator}"></td>
+                    <td th:text="${assessment.weight}"></td>
+                    <td th:text="${assessment.kpiRating}"></td>
+                    <td th:text="${assessment.e_comment}"></td>
+                    <td th:text="${assessment.e_rating}"></td>
+                    <td th:text="${assessment.m_comment}"></td>
+                    <td th:text="${assessment.m_rating}"></td>
+                    <!-- <td th:text="${assessment.kpi.id}"></td> -->
+                    <td class="d-flex justify-content-center align-items-center gap-1">
+                        <a class="btn btn-primary" th:href="@{/assessment/edit/{id} (id=${assessment.id})}">Edit</a>
+                        <form th:action="@{/assessment/{id} (id=${assessment.id})}" th:method="DELETE" sec:authorize="hasRole('MANAGER')">
+                            <button class="btn btn-danger" onclick="return confirm('Are you sure want to delete this ?')" type="submit">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </div>
+    </table>
+    <div class="d-flex justify-content-between align-items-center mt-2">
+        <a th:href="@{/kpi}" class="btn btn-dark">Back</a>
+        <h5>Total Score : <span th:text="${score}" value="-"></span></h5>
+       
+    </div>
+        
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+<body>
+    <section Layout:fragment="content" class="container">
+        <!-- Start Content -->
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <h1 class="fw-bold">List of KPI</h1>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createKPI">Add KPI</button>
+        </div>
+        <table id="table-kpi" class="table text-center table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="col-0.5 text-center">Id</th>
+                    <th class="col-1.5 text-center">Created At</th>
+                    <th class="col-1 text-center">First Deadline</th>
+                    <th class="col-1 text-center">Second Deadline</th>
+                    <th class="col-0.5 text-center">Year</th>
+                    <th class="col-1 text-center">Employee</th>
+                    <!-- <th class="col-1 text-center">Manager</th> -->
+                    <th class="col-2 text-center">Final Score</th>
+                    <th class="col-3 text-center">Action</th>
+                </tr>
+            </thead>
+        </table>
+
+        <!-- Start Modal Create -->
+        <div class="modal fade" id="createKPI" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="staticBackdropLabel">Create KPI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="employee-id" class="form-label fw-bold">Employee Id</label>
+                            <input type="text" class="form-control" id="employee-id" required>
+                        </div>
+                        <div>
+                            <label for="manager-id" class="form-label fw-bold">Manager Id</label>
+                            <input type="text" class="form-control" id="manager-id" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="create-kpi">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Create -->
+
+    <!-- Start Modal Edit -->
+    <div class="modal fade" id="updatekpi" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="staticBackdropLabel">Update KPI</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="hidden" class="form-control" id="update-kpi-id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="update-kpi-create" class="form-label fw-bold">Create at</label>
+                        <input type="text" class="form-control" id="update-kpi-create" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="update-kpi-create" class="form-label fw-bold">Deadline 1</label>
+                        <input type="text" class="form-control" id="update-kpi-deadline1" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="update-kpi-create" class="form-label fw-bold">Deadline 2</label>
+                        <input type="text" class="form-control" id="update-kpi-deadline2" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="update-kpi-create" class="form-label fw-bold">Year</label>
+                        <input type="text" class="form-control" id="update-kpi-year" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="update-kpi-create" class="form-label fw-bold">Final Score</label>
+                        <input type="text" class="form-control" id="update-kpi-score">
+                    </div>
+                    <div class="mb-3">
+                        <label for="update-kpi-create" class="form-label fw-bold">Employee</label>
+                        <input type="text" class="form-control" id="update-kpi-employee-id">
+                    </div>
+                    <div>
+                        <input type="hidden" class="form-control" id="update-kpi-manager-id">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="update-kpi">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Modal Edit -->
+    </section>
+    <!-- Script -->
+    <div Layout:fragment="script">
+        <script th:src="@{js/kpi.js}"></script>
+    </div>
+</body>
+</html>

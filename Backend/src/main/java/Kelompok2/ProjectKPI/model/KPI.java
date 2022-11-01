@@ -1,12 +1,16 @@
 package Kelompok2.ProjectKPI.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -19,14 +23,36 @@ public class KPI {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime created_at;
+    @JsonFormat(pattern="dd-MM-yyyy")
+    @Column(nullable = false)
+    private LocalDate created_at;
 
-    private LocalDateTime first_deadline;
+    @JsonFormat(pattern="dd-MM-yyyy")
+    @Column(nullable = false)
+    private LocalDate first_deadline;
 
-    private LocalDateTime second_deadline;
+    @JsonFormat(pattern="dd-MM-yyyy")
+    @Column(nullable = false)
+    private LocalDate second_deadline;
 
     private Long final_score;
 
-    private Date year;
+    private Integer year;
 
+    @ManyToOne
+    private Employee employee;
+
+    @ManyToOne
+    @JoinColumn()
+    private Employee manager;
+
+    @ManyToOne
+    private Status current_stats;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "kpi",cascade = CascadeType.ALL)
+    private List<Assessment> assessments;
+
+    @OneToMany(mappedBy = "kpi")
+    private List<History> histories;
 }

@@ -1,5 +1,6 @@
 package Kelompok2.ProjectKPI.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,9 +19,13 @@ public class Job {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(unique = true,nullable = false)
     private String code;
 
-    @Column(nullable = false)
+    @Column(unique = true,nullable = false)
     private String title;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "job", cascade = CascadeType.ALL)
+    private List<Employee> employees;
 }
