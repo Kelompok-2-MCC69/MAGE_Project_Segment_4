@@ -8,7 +8,7 @@ public class ProjectKpiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectKpiApplication.class, args);
-		System.out.println("Hello Buddy, Your App is Running");
+		System.out.println("Hello Buddy, Your App is Running - Frontend");
 	}
 
 }

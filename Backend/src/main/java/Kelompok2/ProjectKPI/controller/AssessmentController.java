@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import javax.mail.MessagingException;
 
 @AllArgsConstructor
 @RestController
@@ -26,7 +27,7 @@ public class AssessmentController {
     }
 
     @PostMapping
-    public Assessment create(@RequestBody AssessmentRequest assessmentRequest){
+    public Assessment create(@RequestBody AssessmentRequest assessmentRequest) throws MessagingException{
         return assessmentService.create(assessmentRequest);
     }
 
