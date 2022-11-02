@@ -46,7 +46,6 @@ public class AssessmentController {
     @GetMapping("/edit/{id}")
     public String beforeUpdate(Model model, @PathVariable Long id){
         model.addAttribute("assessment", assessmentService.getById(id));
-        // model.addAttribute("assessmentRequest", new AssessmentRequest());
         return "assessment/updateAss";
     }
 
@@ -80,6 +79,6 @@ public class AssessmentController {
     @PutMapping("/edit/myass/{id}")
     public String updatedEmp(AssessmentRequest assessmentRequest, @PathVariable Long id){
         assessmentService.update(assessmentRequest, id);
-        return "redirect:/kpi/mykpi";
+        return "redirect:/mykpi";
     }
 }

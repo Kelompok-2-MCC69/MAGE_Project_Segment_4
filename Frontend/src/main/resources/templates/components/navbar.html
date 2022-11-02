@@ -21,13 +21,18 @@
                 </button>
                 <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" th:classappend=" ${isActive} == 'employee' ? 'active':'' "th:href="@{/employee}">Employee</a>
-                        <a class="nav-link"th:classappend=" ${isActive} == 'kpi' ? 'active':'' " th:href="@{/kpi}">KPI</a> 
-                        <a class="nav-link" th:classappend=" ${isActive} == 'employee-p' ? 'active':''" href=" #">Employee - P</a>
-                        <a class="nav-link" th:classappend=" ${isActive} == 'mykpi' ? 'active':''" th:href="@{/kpi/mykpi}">MyKPI</a>
+                        <a class="nav-link" th:classappend=" ${isActive} == 'employee' ? 'active':'' "th:href="@{/employee}" sec:authorize="hasRole('MANAGER')">Employee</a>
+                        <a class="nav-link"th:classappend=" ${isActive} == 'kpi' ? 'active':'' " th:href="@{/kpi}" sec:authorize="hasRole('MANAGER')">KPI</a> 
+                        <a class="nav-link" th:classappend=" ${isActive} == 'employee-p' ? 'active':''" href=" #" sec:authorize="hasRole('EMPLOYEE')">Employee - P</a>
+                        <a class="nav-link" th:classappend=" ${isActive} == 'mykpi' ? 'active':''" th:href="@{/kpi/mykpi}" sec:authorize="hasRole('EMPLOYEE')">MyKPI</a>
                         <!-- <a class="nav-link" th:classappend=" ${isActive} == 'role' ? 'active':''" th:href="@{/job}">Job</a> -->
                     </div>
                     <div>
+                        <!-- <span class="mx-2" style="color: white;" sec:authorize="isAuthenticated()">
+                        <span sec:authentication="name"></span>
+                        </span> -->
+                        <span class="nav-link text-white">[[${#request.remoteUser}]]</span>
+                  
                         <form th:action="@{/logout}" th:method="POST">
                             <button class="btn btn-outline-light">Logout</button>
                         </form>

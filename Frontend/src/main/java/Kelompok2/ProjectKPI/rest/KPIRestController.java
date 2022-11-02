@@ -48,10 +48,4 @@ public class KPIRestController {
         return kpiService.delete(id);
     }
 
-    @GetMapping("/mykpi/{id}")
-    public List<KPI> getMyKpi(@PathVariable Long id){
-        // return kpiService.getMyKPI(1L);
-        return kpiService.getMyKPI(id);
-    }
-
 }

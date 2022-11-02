@@ -29,7 +29,7 @@ public class LoginController {
         if(authentication == null || authentication instanceof AnonymousAuthenticationToken){
             return "auth/login";
         }
-        return "redirect:/employee";
+        return "redirect:/dashboard";
     }
 
     @PostMapping
@@ -38,21 +38,6 @@ public class LoginController {
             return "redirect:/login?error=true";
         }
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        List<String> roles = authentication.getAuthorities().stream()
-        .map(authority -> authority.getAuthority())
-        .collect(Collectors.toList());
-
-        for (String role : roles) {
-            if(role.equals("ROLE_MANAGER")){
-                return "redirect:/employee";
-            }
-            if(role.equals("ROLE_EMPLOYEE")){
-                return "redirect:/kpi";
-            }
-        }
-
-        return "redirect:/employee";   
+        return "redirect:/login";   
     }
 }

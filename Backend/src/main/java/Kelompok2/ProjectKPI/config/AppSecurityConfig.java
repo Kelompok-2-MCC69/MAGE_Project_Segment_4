@@ -40,9 +40,10 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                     .csrf().disable()
                     .authorizeRequests()
                     .antMatchers("/login/**").permitAll()
+                    .antMatchers("/kpi/mykpi/**").hasRole("EMPLOYEE")
                     .antMatchers("/kpi/**").hasRole("MANAGER")
                     .antMatchers("/employee/**").hasRole("MANAGER")
-                    .antMatchers("/mykpi/**").hasRole("EMPLOYEE")
+                    .anyRequest().authenticated()
                     .and()
                     .httpBasic();
 

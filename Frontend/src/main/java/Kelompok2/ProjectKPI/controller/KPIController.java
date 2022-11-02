@@ -24,13 +24,6 @@ public class KPIController {
         return "kpi/kpi";
     }
 
-    // @GetMapping("/mykpi")
-    // public String getById(Model model, @PathVariable Long id){
-    //     model.addAttribute("mykpi", kpiService.getById(1l));
-    //     model.addAttribute("isActive", "mykpi");
-    //     return "kpi/mykpi";
-    // }
-
     @DeleteMapping("/{id}")
     public String delete(@PathVariable Long id){
         kpiService.delete(id);
@@ -41,7 +34,7 @@ public class KPIController {
     public String getMyKpi(Model model){
         model.addAttribute("isActive", "mykpi");
         model.addAttribute("mykpis", kpiService.getMyKPI(2L));
-        return "kpi/mykpi";
+        return "mykpi/mykpi";
     }
     
 }
