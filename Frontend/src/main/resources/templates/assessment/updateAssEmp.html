@@ -7,7 +7,7 @@
             <h1 class="fw-bold">Editting Assessment</h1>
         </div>
 
-        <form th:action="@{/assessment/edit/myass/{id} (id=${assessment.id})}" th:object="${assessment}" th:method="PUT">
+        <form th:action="@{/assessment/myass/{id} (id=${assessment.id})}" th:object="${assessment}" th:method="PUT">
             <div>
                 <div class="form-group row">
                     <label class="col-form-label" for="indicator">Indicator</label>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="text-center mt-3">
                     <button type="submit" class="btn btn-primary">Save</button>
-                    <a th:href="@{/assessment/{id} (id=${assessment.kpi.id})}" class="btn btn-danger">Cancel</a>
+                    <a th:href="@{/assessment/myass/{id} (id=${assessment.kpi.id})}" class="btn btn-danger">Cancel</a>
                 </div>
             </div>
         </form>

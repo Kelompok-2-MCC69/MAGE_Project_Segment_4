@@ -17,5 +17,6 @@ public class Assessment {
     private Integer e_rating;
     private String m_comment;
     private Integer m_rating;
+    private Integer score;
     private KPI kpi;
 }

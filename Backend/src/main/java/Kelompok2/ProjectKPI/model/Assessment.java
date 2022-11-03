@@ -34,6 +34,8 @@ public class Assessment {
 
     private Integer m_rating;
 
+    private Integer score;
+
     @ManyToOne
     private KPI kpi;
 

@@ -73,14 +73,15 @@ public class AssessmentController {
 
 
     @GetMapping("/edit/myass/{id}")
-    public String beforeUpdateEmp(Model model, @PathVariable Long id){
+    public String beforeUpdateEmp(Model model, @PathVariable Long id,Authentication authentication){
+        model.addAttribute("name", authentication.getName());
         model.addAttribute("assessment", assessmentService.getById(id));
         return "assessment/updateAssEmp";
     }
 
-    @PutMapping("/edit/myass/{id}")
+    @PutMapping("/myass/{id}")
     public String updatedEmp(AssessmentRequest assessmentRequest, @PathVariable Long id){
         assessmentService.update(assessmentRequest, id);
-        return "assessment/updateAssEmp";
+        return "redirect:/dashboard";   
     }
 }
