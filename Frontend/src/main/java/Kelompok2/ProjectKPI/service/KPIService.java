@@ -46,7 +46,7 @@ public class KPIService {
         return restTemplate.exchange(url + "/" + id, HttpMethod.DELETE,null, new ParameterizedTypeReference<KPI>() {}).getBody();
     }
 
-    public List<KPI> getMyKPI(Long id){
-        return restTemplate.exchange(url + "/myKpi/" + id , HttpMethod.GET,null,new ParameterizedTypeReference<List<KPI>>() {}).getBody();
+    public List<KPI> getMyKPI(String name){
+        return restTemplate.exchange(url + "/myKpi/" + name, HttpMethod.GET,null,new ParameterizedTypeReference<List<KPI>>() {}).getBody();
     }
 }

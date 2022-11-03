@@ -18,6 +18,6 @@ public interface KPIRepository extends JpaRepository<KPI,Long> {
 
 //    @Query(value = "select * from tb_kpi k where k.employee_id = :id",
 //            nativeQuery = true)
-    @Query(value = "select * from tb_kpi k join tb_employee e on k.employee_id = e.id where k.employee_id = :id",nativeQuery = true)
-    List<KPI> getByMyKpi(Long id);
+    @Query(value = "select * from tb_kpi k join tb_employee e on k.employee_id = e.id where e.name = :name",nativeQuery = true)
+    List<KPI> getByMyKpi(String name);
 }

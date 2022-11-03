@@ -1,11 +1,14 @@
 package Kelompok2.ProjectKPI.controller;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Kelompok2.ProjectKPI.service.KPIService;
 import lombok.AllArgsConstructor;
@@ -18,7 +21,9 @@ public class KPIController {
     private KPIService kpiService;
 
     @GetMapping
-    public String getAll(Model model){
+    public String getAll(Model model, Authentication authentication)
+    {
+        model.addAttribute("name", authentication.getClass());
         model.addAttribute("kpis", kpiService.getAll());
         model.addAttribute("isActive", "kpi");
         return "kpi/kpi";
@@ -30,11 +35,12 @@ public class KPIController {
         return "redirect:/kpi";
     }
 
-    @GetMapping("/mykpi")
-    public String getMyKpi(Model model){
+    @GetMapping("/myKpi/{name}")
+    public String getMyKpi(@PathVariable String name,Model model, Authentication authentication){
+        model.addAttribute("name", authentication.getName());
+        model.addAttribute("mykpis", kpiService.getMyKPI(name));
         model.addAttribute("isActive", "mykpi");
-        model.addAttribute("mykpis", kpiService.getMyKPI(2L));
-        return "mykpi/mykpi";
+        return "kpi/mykpi";
     }
     
 }

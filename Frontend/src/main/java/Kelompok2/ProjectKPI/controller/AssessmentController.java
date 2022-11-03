@@ -1,6 +1,7 @@
 package Kelompok2.ProjectKPI.controller;
 
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -62,7 +63,8 @@ public class AssessmentController {
     }
 
     @GetMapping("/myass/{id}")
-    public String getByKPIEmp(Model model, @PathVariable Long id){
+    public String getByKPIEmp(Model model, @PathVariable Long id, Authentication authentication){
+        model.addAttribute("name", authentication.getName());
         model.addAttribute("kpi", kpiService.getById(id));
         model.addAttribute("assessments", assessmentService.getByKPI(id));
         model.addAttribute("score", assessmentService.sumScore(id));
@@ -79,6 +81,6 @@ public class AssessmentController {
     @PutMapping("/edit/myass/{id}")
     public String updatedEmp(AssessmentRequest assessmentRequest, @PathVariable Long id){
         assessmentService.update(assessmentRequest, id);
-        return "redirect:/mykpi";
+        return "assessment/updateAssEmp";
     }
 }

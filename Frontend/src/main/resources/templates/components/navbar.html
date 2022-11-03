@@ -24,8 +24,7 @@
                         <a class="nav-link" th:classappend=" ${isActive} == 'employee' ? 'active':'' "th:href="@{/employee}" sec:authorize="hasRole('MANAGER')">Employee</a>
                         <a class="nav-link"th:classappend=" ${isActive} == 'kpi' ? 'active':'' " th:href="@{/kpi}" sec:authorize="hasRole('MANAGER')">KPI</a> 
                         <a class="nav-link" th:classappend=" ${isActive} == 'employee-p' ? 'active':''" href=" #" sec:authorize="hasRole('EMPLOYEE')">Employee - P</a>
-                        <a class="nav-link" th:classappend=" ${isActive} == 'mykpi' ? 'active':''" th:href="@{/kpi/mykpi}" sec:authorize="hasRole('EMPLOYEE')">MyKPI</a>
-                        <!-- <a class="nav-link" th:classappend=" ${isActive} == 'role' ? 'active':''" th:href="@{/job}">Job</a> -->
+                        <a class="nav-link" th:classappend=" ${isActive} == 'mykpi' ? 'active':''" th:href="@{/kpi/myKpi/{name} (name=${name})}" sec:authorize="hasRole('EMPLOYEE')">MyKPI</a>
                     </div>
                     <div>
                         <!-- <span class="mx-2" style="color: white;" sec:authorize="isAuthenticated()">

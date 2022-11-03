@@ -4,7 +4,9 @@ import Kelompok2.ProjectKPI.model.KPI;
 import Kelompok2.ProjectKPI.model.dto.request.KPIRequest;
 import Kelompok2.ProjectKPI.service.KPIService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.List;
 
@@ -40,8 +42,8 @@ public class KPIController {
         return kpiService.delete(id);
     }
 
-    @GetMapping("/myKpi/{id}")
-    public List<KPI> getMyKPI(@PathVariable Long id){
-        return kpiService.getMyKpi(id);
+    @GetMapping("/myKpi/{name}")
+    public List<KPI> getMyKPI(@PathVariable String name){
+        return kpiService.getMyKpi(name);
     }
 }

@@ -70,8 +70,8 @@ public class KPIService {
         return kpiRepository.save(newKpi);
     }
 
-    public List<KPI> getMyKpi(Long id){
-        return kpiRepository.getByMyKpi(id);
+    public List<KPI> getMyKpi(String name){
+        return kpiRepository.getByMyKpi(name);
     }
 
 

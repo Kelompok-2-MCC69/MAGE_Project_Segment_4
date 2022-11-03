@@ -1,6 +1,7 @@
 package Kelompok2.ProjectKPI.controller;
 
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +23,8 @@ public class EmployeeController {
     private AssessmentService assessmentService;
 
     @GetMapping
-    public String getAll(Model model){
+    public String getAll(Model model,Authentication authentication){
+        model.addAttribute("name", authentication.getName());
         model.addAttribute("isActive", "employee");
         model.addAttribute("employees", employeeService.getAll());
         return "employee/employee";
